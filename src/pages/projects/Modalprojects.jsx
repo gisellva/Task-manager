@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function Modalprojects() {
+function Modalprojects( { proyectsarray}) {
   const values = [true, ];
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);
@@ -22,7 +22,7 @@ function Modalprojects() {
       ))}
       <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>Projects Title</Modal.Title>
+          <Modal.Title> title </Modal.Title>
         </Modal.Header>
         <Modal.Body>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
         totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.

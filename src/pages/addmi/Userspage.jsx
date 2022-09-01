@@ -19,7 +19,7 @@ const Userspage = () => {
       <ListGroup className="list-group-flush">
         <ListGroup.Item> user role : {user.rol} </ListGroup.Item>
         <ListGroup.Item> user mail : {user.mail} </ListGroup.Item>
-        <ListGroup.Item>number of projects : {user.proyec}  </ListGroup.Item>
+        
       </ListGroup>
       
     </Card>
