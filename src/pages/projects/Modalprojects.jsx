@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function Modalprojects( { proyectsarray}) {
+function Modalprojects( ) {
   const values = [true, ];
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);
