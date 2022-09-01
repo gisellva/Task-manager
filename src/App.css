@@ -73,3 +73,12 @@ place-items: center;
     justify-content: space-evenly;
     margin-bottom: 2rem;
 }
+.imgnotproject{
+    width: 40rem;
+}
+.sectionproject{
+    display: grid;
+    place-items: center;
+  
+   
+}
