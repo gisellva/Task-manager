@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Modalprojects from './projects/Modalprojects';
 import Button from 'react-bootstrap/Button';
+import Modalbotun from './projects/Modalbotun';
 
 const proyectsarray=[
    {title:"gato 1",
@@ -43,7 +44,7 @@ const Projectspages = () => {
         <h1 className='titleprojects'>Projects</h1>
         <Container className='Containerprojectstext'>
           <h5>agrega mas proyectos</h5>
-          <Button>+</Button>
+          < Modalbotun/>
         </Container>
          <Container className='containerprojects'>
           {proyectsa.map(proyect=>(

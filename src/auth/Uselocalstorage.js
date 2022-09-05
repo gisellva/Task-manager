@@ -1,28 +1,21 @@
 import React, { useState } from 'react'
-
-function Uselocalstorage(itemname,initialvalue){
-
-    const localstorageItem=localStorage.getItem(itemname);
-    let parseItem;
-    if(!localstorageItem){
-      localStorage.setItem(itemname,JSON.stringify(initialvalue))
-      parseItem=initialvalue;
+function UseLocalStorage(item,initial) {
+    const localstorageproject=localStorage.getItem(initial)
+    let Parseproject;
+    if (!localstorageproject) {
+      localStorage.setItem(item,JSON.stringify([]))
+      Parseproject=initial
     }else{
-      parseItem =JSON.parse(localstorageItem)
+      Parseproject= JSON.parse(localstorageproject)
     };
-  
-    const [Item, setItem] = useState(parseItem)
-   
-    const saveitem =(newI)=>{
-      const strin =JSON.stringify(newI);
-      localStorage.setItem(itemname,strin)
-      setItem (newI)
-     }
-     return[
-      Item,
-      saveitem,
-      parseItem
-     ]
+    const [proyectsa, setproyectsa] = useState(Parseproject)
+    const saveproject =(newprojects)=>{
+      const stri=JSON.stringify(newprojects)
+      localStorage.setItem(item,stri)
+      setproyectsa(newprojects)
+     };
+    return[
+      proyectsa,saveproject
+    ]
   }
-
-export default Uselocalstorage
+export default UseLocalStorage
