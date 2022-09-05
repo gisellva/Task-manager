@@ -21,9 +21,7 @@ const proyectsarray=[
    {title:"caballo 5",
    descipcion:"Some quick example text to build on the card title and make up the bulk of the card's content.",
    id:5},
-   {title:"melon 6",
-   descipcion:"Some quick example text to build on the card title and make up the bulk of the card's content.",
-   id:6},
+  
 ]
 const Projectspages = () => {
   const [proyectsa, setproyectsa] = useState(proyectsarray)
