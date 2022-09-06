@@ -22,7 +22,7 @@ export default function AppRouter() {
                <PublicRoute  exact path={routes.Homepage} component={Homepage}/>
                <PublicRoute exact path={routes.Registerpage} component={Registerpage}/>
                <PublicRoute  exact path={routes.Loginpage} component={Loginpage}/>  
-               <PrivateRoute  exact path={routes.Projectspages} component={Projectspages} /> 
+               <PrivateRoute exact path={routes.Projectspages} component={Projectspages} /> 
                <PrivateRoute  exact path={routes.Projectpageid()} component={Projectpageid}/> 
                <PrivateRoute hasRole={roles.administrador} exact path="/admi/users" component={Userspage}/> 
                <PrivateRoute  exact path=  "/Accountpage" component={Accountpage}/>  

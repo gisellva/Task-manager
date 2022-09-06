@@ -52,7 +52,7 @@ const Projectspages = () => {
                <Card.Body>
                 <Card.Title> {proyect.title} </Card.Title>
                 <Card.Text>{proyect.descipcion}</Card.Text>
-                <Modalprojects  fullscreen={fullscreen} setFullscreen={setFullscreen} show={show} setShow={setShow} handleShow={ handleShow}  proyectsarray={ proyectsarray}/>
+                <Modalprojects proyectsa={proyectsa} />
                </Card.Body>
             </Card> ))}
           </Container>

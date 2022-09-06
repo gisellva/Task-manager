@@ -4,8 +4,17 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
+import Modalregister from './register/modalregister';
 
 const Registerpage = () => {
+  const [value, setvalue] = React.useState("")
+  const [lastname, setlastname] = React.useState("")
+  const change =(event)=>{
+    setvalue(event.target.value)
+  }
+  const changelast =(event)=>{
+    setlastname(event.target.value)
+  }
     return(
         <Container className='mt-5'>
         <Form>
@@ -22,13 +31,13 @@ const Registerpage = () => {
         </Row>
   
         <Form.Group className="mb-3" controlId="formGridAddress1">
-          <Form.Label>name</Form.Label>
-          <Form.Control placeholder="enter your name" />
+          <Form.Label >name</Form.Label>
+          <Form.Control placeholder="enter your name" value={value} onChange={change}  />
         </Form.Group>
   
         <Form.Group className="mb-3" controlId="formGridAddress2">
           <Form.Label>last name</Form.Label>
-          <Form.Control placeholder="enter your last name" />
+          <Form.Control placeholder="enter your last name" value={lastname} onChange={changelast}/>
         </Form.Group>
   
         <Row className="mb-3">
@@ -47,9 +56,7 @@ const Registerpage = () => {
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
   
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
+        <Modalregister value={value} lastname={lastname} />
       </Form>
 </Container>
     )

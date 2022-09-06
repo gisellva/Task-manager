@@ -10,7 +10,7 @@ import roles from "../herpser/roles";
    const hasRol=(rol)=> user?.rol==rol
    const login =(userCredencial)=>setuser({rol:roles.administrador,name:"heidy",mail:"gisell@admi.com"})
    const logout=()=>setuser(null)
-
+  
    const updateuser=(data)=>{
     setuser({
       ...user,

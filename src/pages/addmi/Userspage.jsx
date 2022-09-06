@@ -1,28 +1,50 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import UseAuth from '../../auth/UseAuth';
 import Container from 'react-bootstrap/Container';
+import { Button } from 'react-bootstrap';
+
 
 const Userspage = () => {
-    const {user}=UseAuth();
+ const [opti, setopti] = React.useState([])
+const [loading, setloading] = React.useState(true)
+ const api=()=>{
+  fetch('https://random-data-api.com/api/v2/users?size=12&is_xml=true')
+  .then(response => response.json())
+ .then(response =>  setopti(response))
+ .catch(err => console.error(err));
+ setloading(false)
+ }
+    React.useEffect(() => {
+api()
+
+  }, [])
+
     return(
         <>
+        <section className='sectiontitle'>
         <h1 className='titleuser'>Userspage</h1>
-        <Container>
-        <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="/img/female_avatar.svg" height={150} />
-      <Card.Body>
-        <Card.Title> User name : {user.name} </Card.Title>
+        <Button onClick={api} className="b">Next</Button>   
+        </section>
+        <Container className='ss' >
+        {loading && <p>estamos cargando </p>}
+        {opti.map((item)=>(
+        <Card   style={{ width: '16rem' }}>
         
-      </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item> user role : {user.rol} </ListGroup.Item>
-        <ListGroup.Item> user mail : {user.mail} </ListGroup.Item>
+      <Card.Img variant="top" src={item.avatar}  className="imgcarusers"/>
+      <Card.Body>
+        <Card.Title> User name : {item.first_name} </Card.Title>
+         </Card.Body>
+      <ListGroup className="list-group-flush" key={item.id}>
+      <ListGroup.Item > last name: {item.last_name}</ListGroup.Item>
+        <ListGroup.Item > user role : regular </ListGroup.Item>
+        <ListGroup.Item > user mail : {item.email} </ListGroup.Item>
         
       </ListGroup>
       
     </Card>
+    ))}
+     
     </Container>
         </>
     )
