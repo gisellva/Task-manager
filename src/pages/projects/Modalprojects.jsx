@@ -3,34 +3,35 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 
-
-function Modalprojects( {proyectsa}) {
- 
-  const values = [true, ];
-  const [fullscreen, setFullscreen] = useState(true);
+function Modalprojects( {add}) {
   const [show, setShow] = useState(false);
-
-  function handleShow(breakpoint) {
-    setFullscreen(breakpoint);
-    setShow(true);
-  }
+ 
+  
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <>
-      {values.map((v, idx) => (
-        <Button key={idx} className="me-2 mb-2" onClick={() => handleShow(v)}>
-        see project
-          {typeof v === 'string' && `below ${v.split('-')[0]}`}
-        </Button>
-      ))}
-      <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
+      <Button variant="primary" onClick={handleShow}>
+        see projects
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+      
         <Modal.Header closeButton>
-          <Modal.Title>title</Modal.Title>
+          <Modal.Title> project </Modal.Title>
         </Modal.Header>
-        <Modal.Body>Some quick example text to build on the card title and make up the bulk of the card's content.
-        
-         </Modal.Body>
-         
+        <Modal.Body> Porro occaecati ut. Iste est id. Et neque necessitatibus.",
+"Amet temporibus deserunt. Aut facere quod. Saepe repellat tempore.",
+"Corrupti mollitia assumenda. Sed optio mollitia. Ea nobis aliquid."</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
       </Modal>
     </>
   );

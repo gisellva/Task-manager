@@ -5,7 +5,21 @@ import roles from "../herpser/roles";
 
  export default function AuthProvaider({children}) {
    const [user, setuser] = useState(null) 
-  
+   const [add, setadd] = useState([])
+   const addproject=(title ,descipcion)=>{
+     const newp =[...add]
+     newp.push({
+      title ,
+      descipcion
+     });
+     setadd(newp)
+   }
+   const deleteprojects=(title)=>{
+    const newproject=[...add]
+    const projectindex=newproject.findIndex(pro=>pro.title !== title)
+    newproject.splice(projectindex,1)
+    setadd(newproject)
+    }
    const islogged=()=> !!user;
    const hasRol=(rol)=> user?.rol==rol
    const login =(userCredencial)=>setuser({rol:roles.administrador,name:"heidy",mail:"gisell@admi.com"})
@@ -24,7 +38,11 @@ import roles from "../herpser/roles";
       hasRol,
       login,
       logout,
-      updateuser
+      updateuser,
+      add, 
+      setadd,
+      addproject,
+      deleteprojects
     };
     
     return(

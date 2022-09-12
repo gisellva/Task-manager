@@ -9,7 +9,7 @@ const PrivateRoute = ({hasRole:rol,...props}) => {
     const {hasRol,islogged}=UseAuth();
 
     if( rol && !hasRol(rol))return <Redirect to="/Homepage"/>
-    if(!islogged)return <Redirect to={{pathname:routes.Loginpage, state:{from:location}}} />
+    if(!islogged)return <Redirect to={{pathname:routes.Loginpage}} />
    
     return(
         <Route {...props}/>
