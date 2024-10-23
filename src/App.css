@@ -1,0 +1,117 @@
+.user{
+    color: black;
+    text-decoration: none;
+}
+.user:hover{
+    color: gray;
+}
+img{
+    width: 100%;
+    margin-top: 2rem;
+}
+.containernotfoundpage{
+ margin-top: 10rem;
+}
+.containernotfoundpage{
+    display: flex;
+    align-items: center;
+}
+.Container-Homepage{
+    display: flex;
+    justify-content: center;
+    margin-top: 7rem;
+}
+.avatar{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    margin-top: 0.2rem;
+}
+.cardporfile{
+    margin-top: 6rem;
+    
+    display: flex;
+    justify-content: center;
+    
+    
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    border: 1px solid rgb(177, 177, 177);
+    max-width: 360px;
+}
+b{
+margin-top: 1rem;
+}
+.titleprojects{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+.titleuser{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+.containerprojects{
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 1rem ;
+grid-row-gap: 1rem;
+place-items: center;
+}
+.Containerprojectstext{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+}
+.imgnotproject{
+    width: 40rem;
+}
+.sectionproject{
+    display: grid;
+    place-items: center;
+  
+   
+}
+.divprojects{
+ display: grid;
+ place-items: center;
+ font-family: 'Fredoka One', cursive;
+ margin-top: 1rem;
+}
+.divimg{
+    width: 40rem;
+    margin-top: 0rem;
+}
+
+.ss{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 2px ;
+  grid-row-gap: 1rem;
+  place-items: center;
+}
+.sectiontitle{
+  display: grid;
+  place-items: center;
+ 
+ }
+
+.b{
+  margin-top: -5rem;
+}
+.imgcarusers{
+    background-color: rgb(31, 82, 223);
+    border-radius: 60%;
+    
+}
