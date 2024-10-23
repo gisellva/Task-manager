@@ -4,53 +4,62 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import UseAuth from '../../auth/UseAuth';
 
-function Modalbotun() {
-  
+function Modalbotun({ onAddProject }) {
   const [show, setShow] = useState(false);
-  const {  addproject}=UseAuth();
-  const [newpr, setnewpr] = useState("")
+  const [newTitle, setNewTitle] = useState("");
+  const [newDescription, setNewDescription] = useState("");
+  
   const handleClose = () => setShow(false);
-  const handleadd = () => setShow(true);
-  const text=(event)=>{setnewpr(event.target.value)}
-  const handlesumbit =()=>{addproject(newpr),handleClose()}
+  const handleAdd = () => setShow(true);
+  
+  const handleSubmit = () => {
+    const newProject = { title: newTitle, description: newDescription };
+    onAddProject(newProject); 
+    setNewTitle(""); 
+    setNewDescription(""); 
+    handleClose();
+  };
+
   return (
     <>
-      <Button variant="primary" onClick={handleadd}>
+      <Button variant="primary" onClick={handleAdd}>
         +
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>add your new project</Modal.Title>
+          <Modal.Title>Add Your New Project</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <Form >
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Title</Form.Label>
-        <Form.Control  placeholder="enter the title"  onChange={text}  />
-        </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>description</Form.Label>
-        <Form.Control  placeholder="enter the description"/>
-       
-      </Form.Group>
-      <Form.Label>project</Form.Label>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-      <Form.Control type="file" />
-       
-       
-      </Form.Group>
-      
-      
-    </Form>
+          <Form>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Title</Form.Label>
+              <Form.Control
+                placeholder="Enter the title"
+                value={newTitle}
+                onChange={(e) => setNewTitle(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Description</Form.Label>
+              <Form.Control
+                placeholder="Enter the description"
+                value={newDescription}
+                onChange={(e) => setNewDescription(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicFile">
+              <Form.Label>Project File</Form.Label>
+              <Form.Control type="file" />
+            </Form.Group>
+          </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handlesumbit}>
-          save your new project
+          <Button variant="primary" onClick={handleSubmit}>
+            Save Your New Project
           </Button>
         </Modal.Footer>
       </Modal>
@@ -58,4 +67,4 @@ function Modalbotun() {
   );
 }
 
-export default Modalbotun
+export default Modalbotun;

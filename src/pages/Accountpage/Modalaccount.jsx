@@ -7,7 +7,7 @@ import chageacoount from '../../validation/chageacoount';
 
 export default function EditModal({ open, close, user ,account}) {
 	const { register, handleSubmit, formState: { errors, dirtyFields }, reset } = useForm({ resolver: chageacoount });
-	const {  updateuser, hasRol } = useAuth()
+	const {  updateUser, hasRol } = useAuth()
 
 	const isDirty = !!Object.keys(dirtyFields).length; 
 
