@@ -8,8 +8,6 @@ Este es un proyecto de prueba desarrollado (simulador) con React, Bootstrap y Re
 - [Características](#características)
 - [Tecnologías Usadas](#tecnologías-usadas)
 - [Instalación](#instalación)
-- [Uso](#uso)
-- [Contribución](#contribución)
 - [Licencia](#licencia)
 
 ## Características
