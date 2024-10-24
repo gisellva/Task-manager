@@ -1,4 +1,4 @@
-# BreadcrumbsTask-manager
+# Task-manager
 
 
 Este es un proyecto de prueba desarrollado (simulador) con React, Bootstrap y React Hooks, diseñado para gestionar cuentas de usuario con la capacidad de editar la información personal y cambiar la contraseña.
