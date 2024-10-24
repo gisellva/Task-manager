@@ -35,7 +35,9 @@ Sigue estos pasos para configurar el proyecto en tu máquina local:
    ```bash
    git clone https://github.com/tu-usuario/nombre-del-repo.git
    cd nombre-del-repo
-  npm install
-  npm start
+    npm install
+    npm start
   Esto abrirá la aplicación en http://localhost:3000/.
-
+  
+## Licencia
+Este proyecto está licenciado bajo la MIT License.
